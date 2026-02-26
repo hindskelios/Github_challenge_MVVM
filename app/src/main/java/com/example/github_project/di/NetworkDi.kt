@@ -15,15 +15,14 @@ import javax.inject.Singleton
 
 
 @Module
-@InstallIn(SingletonComponent::class) // objet dispo par tt c a d vivent au niveau d app (1 instance)
+@InstallIn(SingletonComponent::class)
 class NetworkDi {
 
     private  val BASE_URL = "https://api.github.com/"
-    //private  val BASE_URL = "https://api.github.com/search/repositories?q=created:%3E2026-01-19&sort=stars&order=desc&page=1"
 
     @Provides
     @Singleton
-    fun pprovideGson(): Gson =
+    fun provideGson(): Gson =
         GsonBuilder().create()
 
     @Provides
